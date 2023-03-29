@@ -2,6 +2,9 @@ const express=require("express");
 const app=express();
 const PORT=process.env.port | "3000";
 app.use(express.urlencoded({extended:true}));
+app.get("/",(req,res)=>{
+  res.send("Api working");
+})
 app.post("/bfhl",(req,res)=>{
   let data=req.body;
   if(Array.isArray(data)===false){
